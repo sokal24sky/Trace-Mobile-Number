@@ -13,6 +13,7 @@ pkg install python
 pip install phonenumbers
 
 git clone https://github.com/sokal24sky/Trace-Mobile-Number
+
 cd Trace-Mobile-Number
 
 python number.py
