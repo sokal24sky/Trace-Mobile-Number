@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2025 AltumCode (https://altumcode.com/)
+ *
+ * This software is licensed exclusively by AltumCode and is sold only via https://altumcode.com/.
+ * Unauthorized distribution, modification, or use of this software without a valid license is not permitted and may be subject to applicable legal actions.
+ *
+ * 🌍 View all other existing AltumCode projects via https://altumcode.com/
+ * 📧 Get in touch for support or general queries via https://altumcode.com/contact
+ * 📤 Download the latest version via https://altumcode.com/downloads
+ *
+ * 🐦 X/Twitter: https://x.com/AltumCode
+ * 📘 Facebook: https://facebook.com/altumcode
+ * 📸 Instagram: https://instagram.com/altumcode
+ */
+
+// stylelint-disable declaration-no-important
+
+// Contextual backgrounds
+
+@mixin bg-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus() {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+  @include deprecate("The `bg-variant` mixin", "v4.4.0", "v5", $ignore-warning);
+}
+
+@mixin bg-gradient-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+  }
+  @include deprecate("The `bg-gradient-variant` mixin", "v4.5.0", "v5", $ignore-warning);
+}

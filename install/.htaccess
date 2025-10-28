@@ -1,0 +1,4 @@
+<Files "dump.sql">
+    Order allow,deny
+    Deny from all
+</Files>
